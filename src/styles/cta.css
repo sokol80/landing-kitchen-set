@@ -1,0 +1,62 @@
+.cta__container {
+  color: var(--color-text-white); /* Весь текст внутри будет белым */
+  aspect-ratio: 21 / 9;
+  /* Магия начинается здесь: */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* Черное затемнение 50% */ url('/assets/cta_img.webp'); /* Ваше изображение */
+
+  background-size: cover; /* Масштабируем, чтобы покрыть всю область */
+  background-position: center; /* Центрируем изображение */
+
+  /* Центрируем контент (заголовок, кнопки) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем дочерние элементы по горизонтали */
+  width: var(--hero-content-max-width, 768px);
+}
+
+.cta__title {
+  margin-bottom: var(--spacing-2);
+}
+
+.cta__subtitle {
+  margin-bottom: var(--spacing-12);
+}
+
+.cta__description {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+  font-weight: var(--font-weight-semibold, 600);
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+/* --- Стили для иконок соцсетей --- */
+.cta__socials {
+  display: flex;
+  gap: var(--spacing-8); /* Отступ между иконками */
+  padding: var(--spacing-2);
+  margin-bottom: var(--spacing-12);
+}
+
+.cta__social-link {
+  transition: transform 0.2s ease;
+}
+
+.cta__social-link:hover {
+  transform: scale(1.1); /* Слегка увеличиваем при наведении */
+}
+
+.cta__social-icon {
+  width: 64px;
+  height: 64px;
+  background-color: transparent; /* Отменяем глобальный фон для иконок */
+}
