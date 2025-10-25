@@ -1,0 +1,57 @@
+.button {
+  display: inline-block;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: inherit; /* Наследуем размер шрифта, чтобы избежать дублирования */
+  font-weight: var(
+    --font-weight-medium
+  ); /* Используем токен для средней жирности */
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  white-space: nowrap; /* Запрещаем перенос текста */
+  flex-shrink: 0; /* Запрещаем сжатие во flex-контейнере */
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:focus {
+  box-shadow: 0 0 0 3px var(--color-primary-focus);
+}
+
+/* Основная кнопка */
+.button--primary,
+.header__button {
+  background-color: var(--color-primary-main);
+  color: var(--color-text-white);
+}
+
+.button--primary:hover,
+.header__button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Второстепенная кнопка (Ghost) */
+.button--secondary {
+  background-color: var(--color-bg-main);
+  color: var(--color-primary-main);
+  border: 1px solid var(--color-primary-main);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-primary-main);
+  color: var(--color-text-white);
+}

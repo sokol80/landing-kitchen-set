@@ -1,0 +1,21 @@
+.stats__container {
+  background-color: var(--color-bg-main);
+  padding: var(--spacing-16) var(--spacing-10);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-16);
+}
+
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.stats__number {
+  color: var(--color-primary-main);
+  font-size: var(--font-size-display);
+  line-height: 1.2;
+  font-weight: var(--font-weight-semibold);
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico?v=2" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VERA - Фабрика мебели</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="/" class="header__logo">
+          <img src="/logo_vera.svg" alt="Vera" class="header__logo-img" />
+          <span class="header__logo-text">Фабрика мебели</span>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#about" class="header__nav-link">О нас</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#portfolio" class="header__nav-link">Портфолио</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#calculator" class="header__nav-link"
+                >Онлайн калькулятор</a
+              >
+            </li>
+            <li class="header__nav-item">
+              <a href="#reviews" class="header__nav-link">Благодарности</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#contacts" class="header__nav-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__contacts">
+          <a href="tel:+79996276767" class="header__phone">
+            <!-- Иконку добавим через CSS -->
+            +7 (999) 627-67-67
+          </a>
+          <button class="button header__button">Заказать звонок</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="display hero__title">
+              Кухня вашей мечты за 21 день – от замера до первого ужина
+            </h1>
+            <p class="hero__subtitle">
+              Создаём кухни, которые живут дольше, чем ипотека. С гарантией 10
+              лет и бесплатным 3D-проектом
+            </p>
+            <div class="hero__actions">
+              <button class="button button--primary">
+                Рассчитать стоимость
+              </button>
+              <button class="button button--secondary">
+                Вызвать замерщика
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats" id="about">
+        <div class="container stats__container">
+          <div class="stats__item">
+            <span class="stats__number">900+</span>
+            <p class="stats__text">реализованных проектов</p>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number">100+</span>
+            <p class="stats__text">вариантов материалов и расцветок</p>
+          </div>
+          <div class="stats__item">
+            <span class="stats__number">10 лет</span>
+            <p class="stats__text">радуем наших клиентов</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <div class="container features__container">
+          <div class="features__image-block">
+            <img
+              src="/assets/features_img.webp"
+              alt="Современная белая кухня"
+            />
+          </div>
+          <div class="features__content-block">
+            <h2 class="features__title">Мы предлагаем</h2>
+            <ul class="features__list">
+              <li class="features__list-item">бесплатный замер</li>
+              <li class="features__list-item">3D-дизайн проект</li>
+              <li class="features__list-item">
+                собственное производство в Волжском
+              </li>
+              <li class="features__list-item">европейское оборудование</li>
+              <li class="features__list-item">
+                огромный выбор материалов и фурнитуры
+              </li>
+              <li class="features__list-item">бесплатная доставка</li>
+              <li class="features__list-item">профессиональный монтаж</li>
+              <li class="features__list-item">10 лет гарантии на материалы</li>
+            </ul>
+            <div class="features__actions">
+              <button class="button button--primary">
+                Рассчитать стоимость
+              </button>
+              <button class="button button--secondary">
+                Вызвать замерщика
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Advantages Section -->
+      <section class="advantages">
+        <div class="container advantages__container">
+          <div class="advantages__content-block">
+            <div class="advantages__text-content">
+              <h2 class="advantages__title">Кухни на заказ от VERA</h2>
+              <p class="advantages__subtitle">
+                По индивидуальным размерам в Волгограде
+              </p>
+            </div>
+
+            <div class="advantages__grid">
+              <div class="advantage-card">
+                <img
+                  src="/icon_inner.svg"
+                  alt=""
+                  class="advantage-card__icon"
+                />
+                <h3 class="advantage-card__title">Вместительность</h3>
+                <p class="advantage-card__text">
+                  Каждому предмету — свое место: выдвижные системы, органайзеры,
+                  скрытые отсеки
+                </p>
+              </div>
+              <div class="advantage-card">
+                <img
+                  src="/icon_space.svg"
+                  alt=""
+                  class="advantage-card__icon"
+                />
+                <h3 class="advantage-card__title">Идеальная посадка</h3>
+                <p class="advantage-card__text">
+                  Вписываемся в ниши, углы, эркеры и нестандартные планировки
+                </p>
+              </div>
+              <div class="advantage-card">
+                <img
+                  src="/icon_longevity.svg"
+                  alt=""
+                  class="advantage-card__icon"
+                />
+                <h3 class="advantage-card__title">Долговечность</h3>
+                <p class="advantage-card__text">
+                  Качественные материалы и надежная фурнитура — кухня служит
+                  дольше и выглядит как новая
+                </p>
+              </div>
+              <div class="advantage-card">
+                <img
+                  src="/icon_individ.svg"
+                  alt=""
+                  class="advantage-card__icon"
+                />
+                <h3 class="advantage-card__title">Индивидуальность</h3>
+                <p class="advantage-card__text">
+                  Высота, глубина, цвет, стиль, подсветка и хранение — всё под
+                  ваш ритм жизни
+                </p>
+              </div>
+            </div>
+            <div class="advantages__actions">
+              <button class="button button--primary">
+                Рассчитать стоимость
+              </button>
+              <button class="button button--secondary">
+                Вызвать замерщика
+              </button>
+            </div>
+          </div>
+
+          <div class="advantages__image-block">
+            <img
+              src="/assets/advantages_img.webp"
+              alt="Современная кухня с открытыми шкафами"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="portfolio" id="portfolio">
+        <div class="container portfolio__container">
+          <h2 class="portfolio__title">Что вы получите на выходе</h2>
+          <p class="portfolio__subtitle">Примеры реализованных нами проектов</p>
+          <!-- Здесь будет слайдер -->
+          <!-- Slider main container -->
+          <div class="swiper portfolio__slider">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  src="/assets/portfolio/portfolio-1.webp"
+                  alt="Пример кухни 1"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/portfolio/portfolio-2.webp"
+                  alt="Пример кухни 2"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="/assets/portfolio/portfolio-3.webp"
+                  alt="Пример кухни 3"
+                />
+              </div>
+               <div class="swiper-slide">
+                <img
+                  src="/assets/portfolio/portfolio-4.webp"
+                  alt="Пример кухни 4"
+                />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Calculator Section -->
+      <section class="calculator" id="calculator">
+        <div class="container">
+          <h2 class="calculator__title">Рассчитайте стоимость кухни</h2>
+          <p class="calculator__subtitle">
+            Ответьте на несколько вопросов и узнайте предварительную стоимость
+            вашей будущей кухни
+          </p>
+          <!-- Здесь будет многошаговый калькулятор -->
+          <div class="calculator__placeholder"></div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials" id="reviews">
+        <div class="container">
+          <h2 class="testimonials__title">
+            Слова благодарности наших клиентов
+          </h2>
+          <div class="testimonials__grid">
+            <!-- Сюда вставим изображения отзывов -->
+            <img src="#" alt="Отзыв от Инны" />
+            <img src="#" alt="Отзыв от Ольги" />
+            <img src="#" alt="Отзыв от Анны" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container cta__container">
+          <h2 class="cta__title">Ответим на все ваши вопросы</h2>
+          <p class="cta__subtitle">
+            Вызовите дизайнера-замерщика, чтобы получить коммерческое
+            предложение и увидеть кухню в 3D
+          </p>
+          <button class="button button--primary">Вызвать замерщика</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacts">
+      <div class="container footer__container">
+        <div class="footer__logo">
+          <img src="/assets/logo_vera.png" alt="Vera Fabrika Mebeli" />
+        </div>
+        <div class="footer__info">
+          <p>ИП Блинов А.А.</p>
+          <p>Адрес производства: г. Волжский, ул. Автодорога 7, 38</p>
+        </div>
+        <div class="footer__contacts">
+          <a href="tel:+79996276767" class="footer__phone"
+            >+7 (999) 627-67-67</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

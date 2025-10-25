@@ -1,0 +1,72 @@
+.portfolio__container {
+  padding: var(--spacing-12) 0; /* Уберем боковые падинги, чтобы слайдер был во всю ширину */
+}
+
+.portfolio__title,
+.portfolio__subtitle {
+  text-align: center;
+  margin-bottom: var(--spacing-4);
+}
+
+.portfolio__subtitle {
+  margin-bottom: var(--spacing-12);
+}
+
+.portfolio__slider {
+  /* Задаем переменные для акцентного цвета Swiper */
+  --swiper-theme-color: var(--brand-color-accent);
+  --swiper-navigation-color: var(--brand-color-accent);
+  --swiper-pagination-color: var(--brand-color-accent);
+  /* padding: 0 var(--container-padding); */ /* Убираем этот паддинг */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Центрируем изображение вертикально */
+  flex-shrink: 0; /* Запрещаем слайду сжиматься */
+  box-sizing: border-box; /* Важно для корректного расчета ширины */
+  width: 80%; /* Ширина слайда по умолчанию для мобильных */
+}
+
+@media (min-width: 768px) {
+  .swiper-slide {
+    width: 45%; /* Ширина слайда для планшетов */
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide {
+    width: 30%; /* Ширина слайда для десктопов */
+  }
+}
+
+.swiper-slide img {
+  width: auto; /* Изображение определяет свою ширину */
+  height: 400px; /* Фиксированная высота для изображений */
+  object-fit: contain; /* Чтобы изображения показывались полностью */
+  border-radius: 0; /* Убираем закругления углов */
+}
+
+/* Стили для стрелок */
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  top: 50%; /* Выравниваем по центру */
+  transform: translateY(-50%);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Стили для пагинации */
+.swiper-pagination-bullet-active {
+  background-color: var(--brand-color-accent) !important;
+}

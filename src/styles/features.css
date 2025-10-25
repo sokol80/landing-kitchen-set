@@ -1,0 +1,52 @@
+.features__container {
+  background-color: var(--color-bg-soft);
+  display: flex;
+}
+
+.features__image-block {
+  width: 50%;
+}
+
+.features__content-block {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-12) var(--spacing-16) var(--spacing-12);
+  gap: var(--spacing-12);
+}
+
+.features__title {
+  text-align: center;
+}
+
+.features__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Заставляем список занять всё доступное пространство */
+}
+
+.features__list-item {
+  display: flex;
+  align-items: flex-start; /* Выравниваем по верху, если текст в несколько строк */
+  gap: var(--spacing-2); /* Отступ между иконкой и текстом */
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+}
+
+.features__list-item::before {
+  content: '';
+  display: block;
+  width: var(--spacing-6); /* 24px */
+  height: var(--spacing-6); /* 24px */
+  background-image: url('/icon_feature_check.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0; /* Запрещаем иконке сжиматься */
+  margin-top: 2px;
+}
+
+.features__actions {
+  align-self: center;
+}

@@ -1,0 +1,379 @@
+@import 'button.css';
+@import 'header.css';
+@import 'hero.css';
+@import 'stats.css';
+@import 'features.css';
+@import 'advantages.css';
+@import 'portfolio.css';
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Базовые стили */
+html {
+  font-size: 16px; /* 1rem = 16px — база для всей дизайн-системы */
+  scroll-behavior: smooth;
+  height: 100%;
+  /* Обеспечиваем, что размер корневого элемента включает всю высоту viewport */
+  box-sizing: border-box;
+}
+/* Глобальное правило: все элементы наследуют box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Общие стили и переменные */
+:root {
+  /* === Часть 1: Основные цвета (Brand Colors) === */
+
+  /* 1.1 Primary / Accent (Терракотовый) */
+  --color-primary-main: #c06c5e;
+  --color-primary-hover: #ad5a4d;
+  --color-primary-pressed: #9f5144;
+  --color-primary-ghost: #f8e7e4;
+  --color-primary-focus: #f2d7d2;
+
+  /* 1.2 Secondary (Зеленый) */
+  --color-secondary-main: #1b5e4b;
+
+  /* === Часть 2: Нейтральные цвета (Neutrals) === */
+
+  /* 2.1 Текст */
+  --color-text-main: #1f2937;
+  --color-text-white: #ffffff;
+  --color-text-secondary: #6b7280;
+
+  /* 2.2 Фон */
+  --color-bg-main: #ffffff;
+  --color-bg-soft: #faf8f5;
+  --color-bg-secondary: #fcfbfa;
+
+  /* 2.3 Границы */
+  --color-border-main: #e5e7eb;
+
+  /* === Часть 3: Служебные цвета (System Colors) === */
+  --color-system-success: #10b981;
+  --color-system-warning: #f59e0b;
+  --color-system-error: #ef4444;
+
+  /* === Система отступов (Spacing Tokens) === */
+  /* Базовая единица: 4px | Основной шаг: 8px */
+
+  --spacing-1: 0.25rem; /* 4px  — XXS. Микро-отступ */
+  --spacing-2: 0.5rem; /* 8px  — XS */
+  --spacing-3: 0.75rem; /* 12px — (редко) */
+  --spacing-4: 1rem; /* 16px — S. Стандартный padding, отступ между параграфами */
+  --spacing-5: 1.25rem; /* 20px — (редко) */
+  --spacing-6: 1.5rem; /* 24px — M. Отступ между элементами списка/сетки */
+  --spacing-8: 2rem; /* 32px — L. Padding секций */
+  --spacing-10: 2.5rem; /* 40px */
+  --spacing-12: 3rem; /* 48px — XL. Между крупными блоками */
+  --spacing-16: 4rem; /* 64px — XXL. Между секциями */
+  --spacing-20: 5rem; /* 80px */
+  --spacing-24: 6rem; /* 96px — Для "воздушных" секций, hero-блоков */
+
+  /* === Радиусы скругления (Border Radius Tokens) === */
+  --radius-sm: 4px; /* Малое скругление: иконки, чипсы, маленькие кнопки */
+  --radius-md: 8px; /* Стандартное скругление: кнопки, карточки, инпуты */
+  --radius-lg: 16px; /* Большое скругление: модальные окна, крупные блоки */
+  --radius-full: 9999px; /* Полный радиус: пиллы, аватарки (круг) */
+
+  /* === Ширина контента === */
+  --hero-content-max-width: 768px;
+
+  /* === Анимации (Transitions) === */
+  --transition-base: color 0.2s ease, background-color 0.2s ease;
+
+  /* === Шрифты и типографика (Typography) === */
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --font-size-base: 1rem; /* 16px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.25rem; /* 20px */
+  --font-size-lg: 1.5rem; /* 24px */
+  --font-size-xl: 2rem; /* 32px */
+  --font-size-xxl: 2.5rem; /* 40px */
+  --font-size-display: 3rem; /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Вместе с display:flex и flex-grow:1 на main создает "липкий" футер */
+
+  /* --- Типографика --- */
+  font-family: var(--font-primary);
+
+  /* Резервный шрифт на случай отказа переменной */
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-base);
+  color: var(--color-text-main);
+
+  /* --- Фон --- */
+  background-color: var(--color-bg-secondary);
+
+  /* --- Улучшение рендеринга шрифтов --- */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  flex-grow: 1; /* Позволяет main занять все доступное пространство */
+}
+
+/* Общие свойства для всех заголовков */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+/* Display (геройский заголовок — обычно не <h1>, а отдельный класс) */
+.display {
+  font-size: var(--font-size-display);
+  line-height: 1.2;
+}
+
+/* H1 */
+h1 {
+  font-size: var(--font-size-xxl);
+  line-height: 1.2;
+}
+
+/* H2 */
+h2 {
+  font-size: var(--font-size-xl);
+  line-height: 1.2;
+}
+
+/* H3 */
+h3 {
+  font-size: var(--font-size-lg);
+  line-height: 1.3;
+}
+
+/* H4 */
+h4 {
+  font-size: var(--font-size-md);
+  line-height: 1.4;
+}
+
+/* Параграфы: добавляем отступ между ними */
+p + p {
+  margin-top: var(--spacing-4);
+}
+
+/*
+ * Базовые стили для изображений для обеспечения адаптивности,
+ * правильного отображения и graceful degradation (изящной деградации).
+ */
+img {
+  /* 1. Адаптивность и сохранение пропорций */
+  max-width: 100%; /* Изображение не будет шире своего контейнера. */
+  height: auto; /* Высота подстраивается автоматически для сохранения пропорций. */
+
+  /* 2. Устранение проблем с компоновкой */
+  display: block; /* Превращает img в блочный элемент, убирая лишний отступ снизу. */
+
+  /* 3. Улучшение отображения при ошибках загрузки */
+  font-style: italic; /* Стиль для альтернативного текста (alt), если изображение не загрузилось. */
+  background-color: var(
+    --color-bg-soft
+  ); /* Мягкий фон-плейсхолдер на время загрузки или при ошибке. */
+}
+
+/*
+ * Базовые стили для ссылок `<a>`.
+ * Обеспечивают консистентность, доступность и интерактивность.
+ */
+a {
+  /* 1. Внешний вид */
+  color: var(--color-text-main); /* Основной цвет для всех ссылок */
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  background-color: transparent; /* Прозрачный фон по умолчанию */
+
+  /* 2. Интерактивность */
+  cursor: pointer; /* Указываем, что элемент кликабельный */
+  transition: var(
+    --transition-base
+  ); /* Плавный переход для состояний hover/focus */
+
+  /* 3. Сброс для мобильных устройств */
+  -webkit-tap-highlight-color: transparent; /* Убирает синюю подсветку при касании на iOS/Android */
+}
+
+/* Состояние при наведении: делаем ссылку темнее */
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/*
+ * 4. Доступность (Accessibility) - Стили для фокуса.
+ * :focus-visible срабатывает только при навигации с клавиатуры (Tab),
+ * не мешая пользователям мыши.
+ */
+a:focus {
+  outline: none; /* Убираем стандартный контур, чтобы заменить его кастомным */
+}
+
+a:focus-visible {
+  /*
+   * Используем box-shadow вместо outline для создания "мягкого" контура,
+   * который не ломает верстку. Он отрисовывается внутри элемента.
+   * 2px - толщина, var(--color-primary-focus) - цвет из дизайн-системы.
+   */
+  box-shadow: 0 0 0 2px var(--color-primary-focus);
+  border-radius: var(--radius-sm); /* Слегка скругляем углы контура фокуса */
+}
+
+.container {
+  /* 1. Ограничиваем максимальную ширину для контентной части на больших экранах */
+  max-width: 1280px;
+
+  /* 2. Центрируем контейнер по горизонтали. Шорткат для margin: 0 auto; */
+  margin: 0 auto;
+
+  /* 3. Добавляем симметричные боковые отступы, чтобы контент не "прилипал"
+     к краям на мобильных устройствах. Используем токен из дизайн-системы. */
+}
