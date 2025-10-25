@@ -1,0 +1,44 @@
+/* Стили для подвала (Footer) */
+.footer__container {
+  background-color: #006049;
+  color: var(--color-text-white);
+  padding: var(--spacing-6) var(--spacing-10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__logo img {
+  height: 65px;
+  background-color: transparent; /* Отменяем глобальный фон для иконок */
+}
+
+.footer__phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-white); /* Белый цвет телефона */
+  margin-bottom: var(--spacing-4);
+}
+
+.footer__phone:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Иконка телефона белого цвета */
+.footer__phone::before {
+  content: '';
+  display: block;
+  width: var(--spacing-6); /* 24px */
+  height: var(--spacing-6); /* 24px */
+  background-image: url('/icon_phone_footer.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: filter 0.3s ease;
+}

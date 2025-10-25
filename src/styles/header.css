@@ -47,7 +47,7 @@
 .header__nav-link {
   position: relative; /* База для позиционирования псевдо-элемента */
   text-decoration: none;
-  color: var(--color-text-primary, #333);
+  color: var(--color-text-main);
   padding-bottom: var(--spacing-2, 8px); /* Место для линии */
 }
 
@@ -58,7 +58,7 @@
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--brand-color-accent, #c06246);
+  background-color: var(--color-primary-pressed);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease-out;
@@ -83,7 +83,7 @@ li.header__nav-item {
   align-items: center;
   gap: var(--spacing-2); /* 8px */
   text-decoration: none;
-  color: var(--color-text-primary, #333); /* Добавил цвет с фолбэком */
+  color: var(--color-text-main); /* Добавил цвет с фолбэком */
   font-weight: var(--font-weight-normal);
   font-size: var(--font-size-base);
   font-family: inherit; /* Наследуем шрифт от body */
@@ -92,7 +92,7 @@ li.header__nav-item {
 }
 
 .header__phone:hover {
-  color: var(--brand-color-accent, #c06246);
+  color: var(--color-primary-pressed);
 }
 
 .header__phone::before {
