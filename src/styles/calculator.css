@@ -1,0 +1,12 @@
+.calculator__container {
+  background-color: var(--color-bg-soft);
+  padding: var(--spacing-12) var(--spacing-10);
+}
+.calculator__title {
+  text-align: center;
+  margin-bottom: var(--spacing-4);
+}
+.calculator__subtitle {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}

@@ -1,0 +1,21 @@
+/* Стили для секции "Отзывы" (Testimonials) */
+
+.testimonials__container {
+  background-color: var(--color-bg-main);
+  padding: var(--spacing-12) var(--spacing-10);
+}
+
+.testimonials__title {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.testimonials__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.testimonials__item img {
+  background-color: var(--color-bg-main);
+}

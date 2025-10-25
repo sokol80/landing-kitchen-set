@@ -1,5 +1,5 @@
 .portfolio__container {
-  padding: var(--spacing-12) 0;
+  padding: var(--spacing-12) var(--spacing-10);
   background-color: var(--color-bg-main);
 }
 
@@ -14,7 +14,7 @@
 }
 
 .swiper.portfolio__slider {
-  height: 500px;
+  height: 450px;
 }
 
 .swiper-slide {
