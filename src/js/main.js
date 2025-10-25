@@ -1,4 +1,5 @@
-import '@/styles/main.css';
+// import '@/styles/main.css';
 
 // Импортируем наш модуль слайдера, чтобы он начал работать
 import './slider.js';
+import '@/styles/main.css';

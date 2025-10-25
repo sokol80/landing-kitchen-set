@@ -1,5 +1,6 @@
 .portfolio__container {
-  padding: var(--spacing-12) 0; /* Уберем боковые падинги, чтобы слайдер был во всю ширину */
+  padding: var(--spacing-12) 0;
+  background-color: var(--color-bg-main);
 }
 
 .portfolio__title,
@@ -9,64 +10,48 @@
 }
 
 .portfolio__subtitle {
-  margin-bottom: var(--spacing-12);
+  margin-bottom: var(--spacing-8);
 }
 
-.portfolio__slider {
-  /* Задаем переменные для акцентного цвета Swiper */
-  --swiper-theme-color: var(--brand-color-accent);
-  --swiper-navigation-color: var(--brand-color-accent);
-  --swiper-pagination-color: var(--brand-color-accent);
-  /* padding: 0 var(--container-padding); */ /* Убираем этот паддинг */
+.swiper.portfolio__slider {
+  height: 500px;
 }
 
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Центрируем изображение вертикально */
-  flex-shrink: 0; /* Запрещаем слайду сжиматься */
-  box-sizing: border-box; /* Важно для корректного расчета ширины */
-  width: 80%; /* Ширина слайда по умолчанию для мобильных */
-}
-
-@media (min-width: 768px) {
-  .swiper-slide {
-    width: 45%; /* Ширина слайда для планшетов */
-  }
-}
-
-@media (min-width: 1024px) {
-  .swiper-slide {
-    width: 30%; /* Ширина слайда для десктопов */
-  }
+  width: auto;
 }
 
 .swiper-slide img {
-  width: auto; /* Изображение определяет свою ширину */
-  height: 400px; /* Фиксированная высота для изображений */
-  object-fit: contain; /* Чтобы изображения показывались полностью */
-  border-radius: 0; /* Убираем закругления углов */
+  display: block;
+  width: auto;
+  height: 100%;
 }
 
-/* Стили для стрелок */
+.portfolio__container .swiper-pagination {
+  position: static;
+  margin-top: var(--spacing-8);
+  bottom: auto;
+  left: auto;
+  right: auto;
+  z-index: auto;
+  --swiper-pagination-color: var(--color-primary-main);
+}
+
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  backdrop-filter: blur(4px);
-  top: 50%; /* Выравниваем по центру */
-  transform: translateY(-50%);
+  color: var(--color-text-main);
+  background-color: rgba(250, 250, 250, 0.5);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-2);
 }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 24px;
-  font-weight: 700;
-}
+@media (max-width: 767px) {
+  .swiper.portfolio__slider {
+    height: auto;
+  }
 
-/* Стили для пагинации */
-.swiper-pagination-bullet-active {
-  background-color: var(--brand-color-accent) !important;
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
 }
