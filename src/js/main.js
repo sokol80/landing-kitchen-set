@@ -1,6 +1,11 @@
 // Импортируем наш модуль слайдера, чтобы он начал работать
 import './slider.js';
 import '@/styles/main.css';
+// Импорт CSS
+import 'aos/dist/aos.css';
+
+// Импорт JavaScript
+import AOS from 'aos';
 
 // src/main.js
 import Alpine from 'alpinejs';
@@ -18,3 +23,6 @@ window.Alpine = Alpine;
 Alpine.start();
 
 console.log('Alpine.js запущен!');
+
+// Инициализация
+AOS.init();

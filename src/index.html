@@ -54,7 +54,8 @@
       <!-- Hero Section -->
       <section class="hero" id="hero">
         <div class="container hero__container">
-          <div class="hero__content">
+          <div
+            class="hero__content">
             <h1 class="display hero__title">
               Кухня вашей мечты за 21 день – от замера до первого ужина
             </h1>
@@ -70,7 +71,7 @@
                 Вызвать замерщика
               </button>
             </div>
-          </div>
+          
         </div>
       </section>
 
@@ -78,15 +79,15 @@
       <section class="stats" id="about">
         <div class="container stats__container">
           <div class="stats__item" x-data="blockCounter(900, 1500)">
-            <span class="stats__number" x-text="count + '+'"></span>
+            <span class="stats__number" x-text="'> ' + count"></span>
             <p class="stats__text">реализованных проектов</p>
           </div>
           <div class="stats__item" x-data="blockCounter(100, 1500)">
-            <span class="stats__number" x-text="count + '+'"></span>
+            <span class="stats__number" x-text="'> ' + count"></span>
             <p class="stats__text">вариантов материалов и расцветок</p>
           </div>
           <div class="stats__item" x-data="blockCounter(10, 1500)">
-            <span class="stats__number" x-text="count + ' лет'"></span>
+            <span class="stats__number" x-text="'> ' + count + ' лет'"></span>
             <p class="stats__text">радуем наших клиентов</p>
           </div>
         </div>
@@ -104,18 +105,70 @@
           <div class="features__content-block">
             <h2 class="features__title">Мы предлагаем</h2>
             <ul class="features__list">
-              <li class="features__list-item">бесплатный замер</li>
-              <li class="features__list-item">3D-дизайн проект</li>
-              <li class="features__list-item">
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="400"
+              >
+                бесплатный замер
+              </li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="400"
+              >
+                3D-дизайн проект
+              </li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="400"
+              >
                 собственное производство в Волжском
               </li>
-              <li class="features__list-item">европейское оборудование</li>
-              <li class="features__list-item">
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                data-aos-duration="400"
+              >
+                европейское оборудование
+              </li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-duration="400"
+              >
                 огромный выбор материалов и фурнитуры
               </li>
-              <li class="features__list-item">бесплатная доставка</li>
-              <li class="features__list-item">профессиональный монтаж</li>
-              <li class="features__list-item">10 лет гарантии на материалы</li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="600"
+                data-aos-duration="400"
+              >
+                бесплатная доставка
+              </li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="700"
+                data-aos-duration="400"
+              >
+                профессиональный монтаж
+              </li>
+              <li
+                class="features__list-item"
+                data-aos="fade-up"
+                data-aos-delay="800"
+                data-aos-duration="400"
+              >
+                10 лет гарантии на материалы
+              </li>
             </ul>
             <div class="features__actions">
               <button class="button button--primary">
@@ -141,7 +194,12 @@
             </div>
 
             <div class="advantages__grid">
-              <div class="advantage-card">
+              <div
+                class="advantage-card"
+                data-aos="fade-right"
+                data-aos-delay="200"
+                data-aos-duration="800"
+              >
                 <img
                   src="/icon_inner.svg"
                   alt=""
@@ -153,7 +211,12 @@
                   скрытые отсеки
                 </p>
               </div>
-              <div class="advantage-card">
+              <div
+                class="advantage-card"
+                data-aos="fade-left"
+                data-aos-delay="400"
+                data-aos-duration="800"
+              >
                 <img
                   src="/icon_space.svg"
                   alt=""
@@ -164,7 +227,12 @@
                   Вписываемся в ниши, углы, эркеры и нестандартные планировки
                 </p>
               </div>
-              <div class="advantage-card">
+              <div
+                class="advantage-card"
+                data-aos="fade-right"
+                data-aos-delay="600"
+                data-aos-duration="800"
+              >
                 <img
                   src="/icon_longevity.svg"
                   alt=""
@@ -176,7 +244,12 @@
                   дольше и выглядит как новая
                 </p>
               </div>
-              <div class="advantage-card">
+              <div
+                class="advantage-card"
+                data-aos="fade-left"
+                data-aos-delay="800"
+                data-aos-duration="800"
+              >
                 <img
                   src="/icon_individ.svg"
                   alt=""
