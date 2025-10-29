@@ -1,4 +1,4 @@
-export default (end = 100, duration = 2000) => ({
+export default (end = 100, duration = 2000, delay = 0) => ({
   count: 0,
   startValue: 0,
   endValue: end,
@@ -6,20 +6,20 @@ export default (end = 100, duration = 2000) => ({
   startTime: null,
 
   init() {
-    // Убедимся, что начальное значение установлено в HTML, если оно отличается от 0
-    // Например, <span x-text="count">50</span>, тогда this.count будет 50
     this.startValue = Number(this.$el.textContent) || 0;
     this.count = this.startValue;
 
-    // Запускаем анимацию, когда элемент появляется в поле зрения
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          this.startAnimation();
-          observer.disconnect(); // Отключаем наблюдатель после запуска
+          // Добавляем задержку перед стартом анимации
+          setTimeout(() => {
+            this.startAnimation();
+          }, delay);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 } // Запуск при 10% видимости
+      { threshold: 0.5 }
     );
 
     observer.observe(this.$el);
@@ -29,14 +29,16 @@ export default (end = 100, duration = 2000) => ({
     const animate = (timestamp) => {
       if (!this.startTime) this.startTime = timestamp;
       const progress = timestamp - this.startTime;
-      
-      const current = this.startValue + (this.endValue - this.startValue) * (progress / duration);
+
+      const current =
+        this.startValue +
+        (this.endValue - this.startValue) * (progress / duration);
 
       if (progress < duration) {
-        this.count = Math.min(Math.ceil(current), this.endValue); // Округляем вверх и не превышаем цель
+        this.count = Math.min(Math.ceil(current), this.endValue);
         this.animationFrameId = requestAnimationFrame(animate);
       } else {
-        this.count = this.endValue; // Устанавливаем финальное значение
+        this.count = this.endValue;
       }
     };
 
@@ -44,9 +46,25 @@ export default (end = 100, duration = 2000) => ({
   },
 
   destroy() {
-    // Отменяем анимацию, если компонент будет удален со страницы
     if (this.animationFrameId) {
       cancelAnimationFrame(this.animationFrameId);
     }
-  }
+  },
 });
+
+//<section class="stats" id="about">
+// <div class="container stats__container" x-data="fadeIn">
+// <div class="stats__item" x-data="blockCounter(900, 1500)">
+// <span class="stats__number" x-text="'> ' + count"></span>
+//<p class="stats__text">реализованных проектов</p>
+//</div>
+//<div class="stats__item" x-data="blockCounter(100, 1500)">
+//<span class="stats__number" x-text="'> ' + count"></span>
+//<p class="stats__text">вариантов материалов и расцветок</p>
+//</div>
+//<div class="stats__item" x-data="blockCounter(10, 1500)">
+//<span class="stats__number" x-text="'> ' + count + ' лет'"></span>
+//<p class="stats__text">радуем наших клиентов</p>
+//</div>
+//</div>
+//</section>;

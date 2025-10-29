@@ -10,9 +10,11 @@ import AOS from 'aos';
 // src/main.js
 import Alpine from 'alpinejs';
 import blockCounter from './components/blockCounter';
+import fadeIn from './components/fadeIn';
 
 // Регистрация компонентов
 Alpine.data('blockCounter', blockCounter);
+Alpine.data('fadeIn', fadeIn);
 
 // Можно регистрировать несколько:
 // Alpine.data('dropdown', dropdown)
