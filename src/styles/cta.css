@@ -1,14 +1,10 @@
 .cta__container {
-  color: var(--color-text-white); /* Весь текст внутри будет белым */
+  color: var(--color-text-white);
   aspect-ratio: 21 / 9;
-  /* Магия начинается здесь: */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    /* Черное затемнение 50% */ url('/assets/cta_img.webp'); /* Ваше изображение */
-
-  background-size: cover; /* Масштабируем, чтобы покрыть всю область */
-  background-position: center; /* Центрируем изображение */
-
-  /* Центрируем контент (заголовок, кнопки) */
+    url('/assets/cta_img.webp');
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +14,7 @@
 .cta__content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Центрируем дочерние элементы по горизонтали */
+  align-items: center;
   width: var(--hero-content-max-width, 768px);
 }
 
@@ -39,24 +35,104 @@
   margin-bottom: var(--spacing-12);
 }
 
-/* --- Стили для иконок соцсетей --- */
 .cta__socials {
   display: flex;
-  gap: var(--spacing-8); /* Отступ между иконками */
+  gap: var(--spacing-8);
   padding: var(--spacing-2);
   margin-bottom: var(--spacing-12);
 }
 
+/* --- Анимация бордера и фона --- */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .cta__social-link {
-  transition: transform 0.2s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  transition: transform 0.5s;
+  overflow: hidden;
+}
+
+/* Слой №1 (самый нижний): Вращающийся конический градиент для бордера */
+.cta__social-link::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: conic-gradient(#999999, #ffffff, #999999);
+  animation: rotating 4s linear infinite;
+  z-index: 1;
+}
+
+/* Слой №2: Ваш анимированный градиентный фон */
+.cta__social-link::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 6px); /* Оставляем по 4px для бордера */
+  height: calc(100% - 6px);
+  background-size: 300% 300%;
+  border-radius: 50%;
+  animation: gradient_301 5s ease infinite;
+  z-index: 2;
+}
+
+/* Применяем конкретные градиенты к слою №2 */
+.cta__social-link--telegram::after {
+  background-image: linear-gradient(
+    137.48deg,
+    #86d5ff 10%,
+    #2aabee 45%,
+    #006da3 87%
+  );
+}
+.cta__social-link--whatsapp::after {
+  background-image: linear-gradient(
+    137.48deg,
+    #68fca3 10%,
+    #25d366 45%,
+    #01ac42 87%
+  );
+}
+.cta__social-link--vk::after {
+  background-image: linear-gradient(
+    137.48deg,
+    #adcdf0 10%,
+    #4d76a1 45%,
+    #1e4369 87%
+  );
+}
+
+/* Слой №3 (самый верхний): Иконка */
+.cta__social-icon {
+  width: 42px;
+  background-color: transparent;
+  z-index: 3; /* Убеждаемся, что иконка поверх всех фонов */
+  position: relative; /* Необходимо для работы z-index */
 }
 
 .cta__social-link:hover {
-  transform: scale(1.1); /* Слегка увеличиваем при наведении */
-}
-
-.cta__social-icon {
-  width: 64px;
-  height: 64px;
-  background-color: transparent; /* Отменяем глобальный фон для иконок */
+  transform: scale(1.1);
 }
